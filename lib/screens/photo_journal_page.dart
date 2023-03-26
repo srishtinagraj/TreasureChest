@@ -155,11 +155,7 @@ class _PhotoJournalPageState extends State<PhotoJournalPage> {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => FeedPage(
-                                  image: _image,
-                                  journalText: _journalText ?? 'Start writing here...',
-                                  location: _location ?? 'Where was this photo taken?',
-                                ),
+                                builder: (context) => FeedPage(),
                               ),
                             );
                           },

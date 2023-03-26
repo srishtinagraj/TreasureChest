@@ -60,6 +60,9 @@ flutter:
     - assets/check_icon.png
     - assets/filter_logo.png
     - assets/add_image_icon.png
+    - assets/place_pic.png
+    - assets/place_pic.jpeg
+    - assets/food_pic.jpeg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
   # For details regarding adding assets from package dependencies, see
