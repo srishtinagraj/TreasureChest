@@ -2,7 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:treasurechst/screens/photo_journal_page.dart';
-
+List<FeedItem> _feedItems = [];
 class FeedItem {
   final String location;
   final String image;
@@ -34,7 +34,7 @@ class FeedPage extends StatefulWidget {
 }
 
 class _FeedPageState extends State<FeedPage> {
-  final List<FeedItem> _feedItems = [];
+  
 
   @override
   Widget build(BuildContext context) {
