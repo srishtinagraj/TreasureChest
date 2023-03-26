@@ -13,7 +13,7 @@ class FeedPage extends StatefulWidget {
 }
 
 class _FeedPageState extends State<FeedPage> {
-  final List<FeedItem> _feedItems = [];
+  
 
   @override
   Widget build(BuildContext context) {
