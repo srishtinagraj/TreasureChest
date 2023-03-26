@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:treasurechst/screens/photo_journal_page.dart';
 
 class FeedItem {
   final String location;
@@ -27,11 +28,13 @@ class FeedPage extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  _FeedPageState createState() => _FeedPageState();
+  _FeedPageState createState() {
+    return _FeedPageState();
+  }
 }
 
 class _FeedPageState extends State<FeedPage> {
-  List<FeedItem> _feedItems = [];
+  final List<FeedItem> _feedItems = [];
 
   @override
   Widget build(BuildContext context) {
@@ -53,7 +56,7 @@ class _FeedPageState extends State<FeedPage> {
               ),
               Container(
                 padding: EdgeInsets.symmetric(horizontal: 16.0),
-                child: Image.network(item.image),
+                child: Image.file(item.image[index] as File),
               ),
               Container(
                 padding: EdgeInsets.all(16.0),

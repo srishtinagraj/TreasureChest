@@ -1,5 +1,4 @@
 import 'dart:io';
-
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
@@ -12,13 +11,24 @@ class PhotoJournalPage extends StatefulWidget {
   @override
   _PhotoJournalPageState createState() => _PhotoJournalPageState();
 }
- 
+ class FeedItem {
+  final String location;
+  final File image;
+  final String journalText;
+
+  FeedItem({
+    required this.location,
+    required this.image,
+    required this.journalText,
+  });
+}
+
 class _PhotoJournalPageState extends State<PhotoJournalPage> {
 
   String? _location;
   File? _image;
-  String? _journalText;
-
+  String? _journalText = '';
+  
 
 
   final TextEditingController _textController = TextEditingController();
@@ -62,7 +72,7 @@ class _PhotoJournalPageState extends State<PhotoJournalPage> {
                       ? kIsWeb
                           ? Image.network(_image!.path, fit: BoxFit.cover)
                           : Image.file(_image!, fit: BoxFit.cover)
-                      : Image.asset(
+                           : Image.asset(
                           'assets/sample_image.jpg',
                           fit: BoxFit.cover,
                         ),
@@ -141,6 +151,7 @@ class _PhotoJournalPageState extends State<PhotoJournalPage> {
                       GestureDetector(
                           onDoubleTap: () {
                             _journalText = _journalTextController.text;
+                            print('_journalText = $_journalText');
                             Navigator.push(
                               context,
                               MaterialPageRoute(
@@ -152,6 +163,7 @@ class _PhotoJournalPageState extends State<PhotoJournalPage> {
                               ),
                             );
                           },
+
                       child: TextButton(
                         onPressed: () {},
                         child: Image.asset(
@@ -171,3 +183,4 @@ class _PhotoJournalPageState extends State<PhotoJournalPage> {
     ));
   }
 }
+
