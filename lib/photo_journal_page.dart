@@ -16,8 +16,6 @@ class _PhotoJournalPageState extends State<PhotoJournalPage> {
   File? _image;
 
   final TextEditingController _textController = TextEditingController();
-  
-  get maxHeight => null;
 
   Future<void> getImage() async {
     final picker = ImagePicker();
@@ -27,9 +25,7 @@ class _PhotoJournalPageState extends State<PhotoJournalPage> {
       if (pickedFile != null) {
         _image = File(pickedFile.path);
       } else {
-        if (kDebugMode) {
-          print('No image selected.');
-        }
+        print('No image selected.');
       }
     });
   }
@@ -45,7 +41,7 @@ class _PhotoJournalPageState extends State<PhotoJournalPage> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(
-                height: maxHeight * 0.6,
+                height: maxWidth * 0.3,
                 width: double.infinity,
                 child: _image != null
                     ? kIsWeb
@@ -56,10 +52,10 @@ class _PhotoJournalPageState extends State<PhotoJournalPage> {
                         fit: BoxFit.cover,
                       ),
               ),
-              const SizedBox(height: 50),
+              const SizedBox(height: 20),
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: maxWidth * 0.03),
-                child: const Text(
+                padding: EdgeInsets.symmetric(horizontal: maxWidth * 0.01),
+                child: Text(
                   'Write your journal',
                   style: TextStyle(
                     fontSize: 24,
@@ -69,8 +65,8 @@ class _PhotoJournalPageState extends State<PhotoJournalPage> {
               ),
               const SizedBox(height: 10),
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: maxWidth * 0.03),
-                child: const TextField(
+                padding: EdgeInsets.symmetric(horizontal: maxWidth * 0.01),
+                child: TextField(
                   decoration: InputDecoration(
                     hintText: 'Start writing here...',
                     border: OutlineInputBorder(),
@@ -80,7 +76,7 @@ class _PhotoJournalPageState extends State<PhotoJournalPage> {
               ),
               const SizedBox(height: 20),
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: maxWidth * 0.03),
+                padding: EdgeInsets.symmetric(horizontal: maxWidth * 0.01),
                 child: Row(
                   children: [
                     const Icon(Icons.location_on),
@@ -104,7 +100,7 @@ class _PhotoJournalPageState extends State<PhotoJournalPage> {
               ),
               const SizedBox(height: 20),
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: maxWidth * 0.03),
+                padding: EdgeInsets.symmetric(horizontal: maxWidth * 0.01),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
