@@ -17,7 +17,7 @@ class HomePage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 const Text(
-                  'Welcome to your treasure chest',
+                  'Welcome to your Treasure Chest',
                   style: TextStyle(
                     fontSize: 24,
                     fontWeight: FontWeight.bold,
